@@ -1,0 +1,11 @@
+<%= form_for User.new do |u| %>
+    <%= u.text_field :name %>
+    <%= u.collection_check_boxes(:category_ids,Category.all,:id,:name) do |c| %>
+        <%= c.label  do %>
+            <%= c.check_box %>
+            <%= c.text %>
+        <% end %>
+    <% end %>
+    <%= u.submit '登録' %>
+
+<% end %>
